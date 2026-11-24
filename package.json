@@ -1,0 +1,10 @@
+{
+  "name": "personal-money-manager",
+  "private": true,
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev --workspace=server\" \"npm:dev --workspace=client\"",
+    "build": "npm run build --workspace=server && npm run build --workspace=client"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}
